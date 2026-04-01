@@ -49,8 +49,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.on_event("startup")
 async def startup():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    pass
 
 
 @app.get("/", response_class=HTMLResponse)
